@@ -5,19 +5,19 @@ import java.net.URI;
 public enum Network {
   TEST(
     "io.genobank.test", 
-    "https://genobank.io/test/certificates/verify-certificate-v1#",
+    "https://genobank.io/test/certificates/verify-certificate-paternity.html#",
     "https://api-test.genobank.io/",
     "0x795faFFc58648e435E3bD3196C4F75F8EFc4b306"
     ),
   LOCAL(
     "io.genobank.test", 
-    "http://localhost:5501/test/certificates/verify-certificate-v1.1.html#",
+    "http://localhost:5501/test/certificates/verify-certificate-paternity.html#",
     "https://api-test.genobank.io/",
     "0x795faFFc58648e435E3bD3196C4F75F8EFc4b306"
     ),
   PRODUCTION(
     "io.genobank",
-    "https://genobank.io/certificates/verify-certificate-v1#",
+    "https://genobank.io/certificates/verify-certificate-paternity.html#",
     "https://api.genobank.io/",
     "0x633F5500A87C3DbB9c15f4D41eD5A33DacaF4184"
   );

@@ -41,11 +41,7 @@ public class PermitteeRepresentations {
 
   public final Integer permitteeId;
 
-  public final String jsonPassport;
-
-  public final String jsonVaccineData;
-
-  public final String jsonCovidTest;
+  public final String genotypic;
 
   public PermitteeRepresentations(
     Network network,
@@ -56,9 +52,7 @@ public class PermitteeRepresentations {
     String serial,
     java.time.Instant time,
     Integer permitteeId,
-    String jsonPassport,
-    String jsonVaccineData,
-    String jsonCovidTest
+    String genotypic
   ) throws IllegalArgumentException {
     // Network
     java.util.Objects.requireNonNull(network);
@@ -99,31 +93,18 @@ public class PermitteeRepresentations {
     // Permittee ID
     this.permitteeId = permitteeId;
 
-    // jsonPassport
-    String regex = "^\\{.*\\}$";
-    if (!Pattern.matches(regex, jsonPassport)) {
-      throw new IllegalArgumentException("jsonPassport does not use required format");
+ 
+    java.util.Objects.requireNonNull(genotypic);
+    String[] genotypycArray = genotypic.split(",");
+    if (genotypycArray.length != 64) {
+      throw new IllegalArgumentException("Genotypic does not use required format");
     }
-    this.jsonPassport = jsonPassport;
+    this.genotypic = genotypic;
 
-    // create regex that matches whit start whith [{ and end with }] can contain any character
-    String regex2 = "^\\[\\{.*\\}\\]$";
-    if (!Pattern.matches(regex2, jsonVaccineData)) {
-        throw new IllegalArgumentException("jsonVaccineData does not use required format");
-    }
-    
-    this.jsonVaccineData = jsonVaccineData;
-    System.out.println("jsonVaccineData: " + jsonVaccineData);
-    // jsonVaccineData
-    
-    // jsonCovidTest
 
-    if (!Pattern.matches(regex, jsonCovidTest)) {
-      throw new IllegalArgumentException("jsonPassport does not use required format");
-    }
-    this.jsonCovidTest = jsonCovidTest;
+
   }
-
+ 
   public String getFullSerialization() {
     DateTimeFormatter isoInstantWithMilliseconds = new DateTimeFormatterBuilder()
         .appendInstant(3)
@@ -138,9 +119,7 @@ public class PermitteeRepresentations {
       serial,
       isoInstantWithMilliseconds.format(time),
       permitteeId + "",
-      jsonPassport,
-      jsonVaccineData,
-      jsonCovidTest
+      genotypic
     });
   }
 
@@ -153,9 +132,7 @@ public class PermitteeRepresentations {
       serial,
       time.toEpochMilli() + "",
       permitteeId + "",
-      jsonPassport,
-      jsonVaccineData,
-      jsonCovidTest
+      genotypic
     });  
   }  
 

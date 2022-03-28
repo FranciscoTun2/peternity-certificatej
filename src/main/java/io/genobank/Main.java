@@ -12,7 +12,7 @@ import org.web3j.crypto.Keys;
  */
 public class Main {
   public static void main(String[] args) throws IllegalArgumentException {    
-    if (args.length != 12) {
+    if (args.length != 10) {
       showHelp();
       return;
     }
@@ -52,9 +52,7 @@ public class Main {
       args[7], // Serial
       Instant.ofEpochMilli(Long.parseLong(args[8])), // Time
       signer.permitteeId, // Permittee ID
-      args[9], // Image URI
-      args[10], // JSON data
-      args[11] // JSON data
+      args[9]
     );
 
     System.err.println("Patient:     " + ConsoleColors.YELLOW + representations.patientName + ConsoleColors.RESET);
@@ -63,9 +61,6 @@ public class Main {
     System.err.println("Result:      " + ConsoleColors.YELLOW + representations.result.code + ConsoleColors.RESET);
     System.err.println("Serial:      " + ConsoleColors.YELLOW + representations.serial + ConsoleColors.RESET);
     System.err.println("Time:        " + ConsoleColors.YELLOW + representations.time.toEpochMilli() + "" + ConsoleColors.RESET);
-    System.err.println("jsonPassport:     " + ConsoleColors.YELLOW + representations.jsonPassport + ConsoleColors.RESET);
-    System.err.println("jsonVaccineData:     " + ConsoleColors.YELLOW + representations.jsonVaccineData + ConsoleColors.RESET);
-    System.err.println("jsonCovidTest:     " + ConsoleColors.YELLOW + representations.jsonCovidTest + ConsoleColors.RESET);
 
 
     byte[] signature = signer.sign(representations);
@@ -102,9 +97,6 @@ public class Main {
     System.err.println("    RESULT_CODE        must be a result key in the Laboratory Procedure Taxonomy");
     System.err.println("    SERIAL             must match [A-Z0-9 -]*");
     System.err.println("    TIMESTAMP          procedure/sample collection time as number of milliseconds since UNIX epoch");
-    System.err.println("    JSONPASSPORT       json with all passport information");
-    System.err.println("    JSONVACCINEDATA    json with all vaccine data");
-    System.err.println("    JSONCOVIDTEST      json with all covid test data");
     System.err.println();
     System.err.println("OUTPUT");
     System.err.println("    A complete URL for the certificate is printed to standard output.");
