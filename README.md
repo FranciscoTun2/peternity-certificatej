@@ -64,7 +64,7 @@ java -jar target/*.jar --test
 Or include all required parameters to notarize a certificate
 
 ```sh
-java -jar target/*.jar --test 'wrong outside clever wagon father insane boy junk punch duck drift cupboard' 41 'Bob' '1234' '1' 'N' '' 1614069145429
+java -jar target/*.jar --test 'wrong outside clever wagon father insane boy junk punch duck drift cupboard' 41 'Bob' '1234' '1' 'N' '' 1614069145429 '13,13,10,13,28,30.2,28,31,11,12,11,12,11,11,11,11,12.2,13.2,12.2,14.2,17,12,17,14,12,12,12,8,11,19,15,19,15,19,15,17,9,7,9,6,10,10,10,10,10,12,10,12,16,23,16,20,11,11,11,12,24,22,24,22,x,y,x,x'
 ```
 
 (Test account at https://github.com/Genobank/genobank.io/wiki/Test-Accounts-and-Certificates)
