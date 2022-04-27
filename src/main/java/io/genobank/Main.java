@@ -12,7 +12,7 @@ import org.web3j.crypto.Keys;
  */
 public class Main {
   public static void main(String[] args) throws IllegalArgumentException {    
-    if (args.length != 10) {
+    if (args.length != 2) {
       showHelp();
       return;
     }
@@ -42,6 +42,12 @@ public class Main {
 
     PermitteeSigner signer = new PermitteeSigner(args[1], Integer.parseInt(args[2]));
     System.err.println("Address:     " + ConsoleColors.YELLOW + Keys.toChecksumAddress(signer.credentials.getAddress()) + ConsoleColors.RESET);
+
+
+
+    
+
+
     
     PermitteeRepresentations representations = new PermitteeRepresentations(
       network,
