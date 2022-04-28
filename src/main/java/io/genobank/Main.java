@@ -11,19 +11,20 @@ import org.web3j.crypto.Keys;
  * @author William Entriken
  */
 public class Main {
-  public static void main(String[] args) throws IllegalArgumentException {    
-    if (args.length != 2) {
+  public static void main(String[] args) throws IllegalArgumentException {
+
+    if (args.length != 1) {
       showHelp();
       return;
     }
-    
+
     System.err.println("Blockchain Lab Results Certification");
     System.err.println("Java Certification Example, version 1.1");
     System.err.println("(c) GenoBank.io 🧬");
     System.err.println();
 
     Network network;
-    switch (args[0]) {
+    switch (Settings.NETWORK) {
       case "--test":
         System.err.println("Network:     " + ConsoleColors.GREEN + "TEST NETWORK" + ConsoleColors.RESET);
         network = Network.TEST;
@@ -40,29 +41,23 @@ public class Main {
         throw new IllegalArgumentException("You must specify --test or --production network");
     }
 
-    PermitteeSigner signer = new PermitteeSigner(args[1], Integer.parseInt(args[2]));
+    PermitteeSigner signer = new PermitteeSigner(Settings.TWELVE_WORD_PHRASE, Integer.parseInt(Settings.PERMITTEE_ID));
     System.err.println("Address:     " + ConsoleColors.YELLOW + Keys.toChecksumAddress(signer.credentials.getAddress()) + ConsoleColors.RESET);
 
 
 
-    
-
-
-    
     PermitteeRepresentations representations = new PermitteeRepresentations(
       network,
-      args[3], // Patient name
-      args[4], // Patient passport
-      LaboratoryProcedure.procedureWithCode(args[5]), // Laboratory procedure
-      LaboratoryProcedure.procedureWithCode(args[5]).resultWithCode(args[6]),
-      args[7], // Serial
-      Instant.ofEpochMilli(Long.parseLong(args[8])), // Time
+      LaboratoryProcedure.procedureWithCode(Settings.TEST), // Laboratory procedure (ALWAYS PATERNITY TEST)
+      LaboratoryProcedure.procedureWithCode(Settings.TEST).resultWithCode(Settings.RESULT), // Laboratory result
+      Settings.SERIAL, // Serial
+      Instant.ofEpochMilli(Long.parseLong(Settings.TIMESTAMP)), // Time
       signer.permitteeId, // Permittee ID
-      args[9]
+      args[0] // JSON test
     );
 
-    System.err.println("Patient:     " + ConsoleColors.YELLOW + representations.patientName + ConsoleColors.RESET);
-    System.err.println("Passport:    " + ConsoleColors.YELLOW + representations.patientPassport + ConsoleColors.RESET);
+    System.err.println("Father Name:     " + ConsoleColors.YELLOW + representations.fatherName + ConsoleColors.RESET);
+    System.err.println("Child Name:    " + ConsoleColors.YELLOW + representations.childName + ConsoleColors.RESET);
     System.err.println("Procedure:   " + ConsoleColors.YELLOW + representations.procedure.code + ConsoleColors.RESET);
     System.err.println("Result:      " + ConsoleColors.YELLOW + representations.result.code + ConsoleColors.RESET);
     System.err.println("Serial:      " + ConsoleColors.YELLOW + representations.serial + ConsoleColors.RESET);

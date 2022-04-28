@@ -31,6 +31,8 @@ public class LaboratoryProcedure {
         return new LaboratoryProcedure("4", "COVID-19-VACCINE");
       case "5":
         return new LaboratoryProcedure("5", "SARS-CoV-2-IgG");
+      case "6":
+        return new LaboratoryProcedure("6", "Paternity Test");  
       default:
         throw new IllegalArgumentException("Only laboratory procedure 1=COVID-19-PCR, 2=COVID-19-ANTIGEN, 3=COVID-19-LAMP 4=COVID-19-VACCINE, 5=SARS-CoV-2-IgG are supported in this version");
     }

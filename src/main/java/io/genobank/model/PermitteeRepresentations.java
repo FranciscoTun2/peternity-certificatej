@@ -12,6 +12,7 @@ import org.web3j.crypto.Hash;
 import org.web3j.crypto.Sign;
 
 import org.json.JSONObject;
+import org.json.JSONArray;
 
 /**
  * This is a specific laboratory result which can be notarized on the
@@ -19,6 +20,7 @@ import org.json.JSONObject;
  * 
  * @author William Entriken
  */
+
 public class PermitteeRepresentations {
 
   private static final String versionCode = "V1";
@@ -27,9 +29,9 @@ public class PermitteeRepresentations {
   
   public final Network network;
 
-  public final String patientName;
+  public final String fatherName;
 
-  public final String patientPassport;
+  public final String childName;
 
   public final LaboratoryProcedure procedure;
   
@@ -41,34 +43,22 @@ public class PermitteeRepresentations {
 
   public final Integer permitteeId;
 
-  public final String genotypic;
+  public final String markers;
+
+  public final String samples;
 
   public PermitteeRepresentations(
     Network network,
-    String patientName,
-    String patientPassport,
     LaboratoryProcedure procedure,
     LaboratoryProcedureResult result,
     String serial,
     java.time.Instant time,
     Integer permitteeId,
-    String genotypic
+    String jsonTest
   ) throws IllegalArgumentException {
     // Network
     java.util.Objects.requireNonNull(network);
     this.network = network;
-    
-    // Patient name
-    if (!Pattern.matches("[A-Za-z0-9 .-]+", patientName)) {
-      throw new IllegalArgumentException("Patient name does not use required format");
-    }
-    this.patientName = patientName;
-    
-    // Patient passport
-    if (!Pattern.matches("[A-Z0-9 .-]+", patientPassport)) {
-      throw new IllegalArgumentException("Patient passport does not use required format");
-    }
-    this.patientPassport = patientPassport;
     
     // Laboratory procedure
     java.util.Objects.requireNonNull(procedure);
@@ -93,15 +83,45 @@ public class PermitteeRepresentations {
     // Permittee ID
     this.permitteeId = permitteeId;
 
- 
-    java.util.Objects.requireNonNull(genotypic);
-    String[] genotypycArray = genotypic.split(",");
-    if (genotypycArray.length != 64) {
-      throw new IllegalArgumentException("Genotypic does not use required format");
+    java.util.Objects.requireNonNull(jsonTest);
+
+    // parse String into JSONArray
+
+    try{
+        String markAux = "";
+        String sampleAux = "";
+        JSONObject jsonObject = new JSONObject(jsonTest);
+        JSONArray jsonMarkers = jsonObject.getJSONArray("marcadores");
+        JSONArray jsonSamples = jsonObject.getJSONArray("muestras");
+
+        for (int i = 0; i < jsonMarkers.length(); i++) {
+            markAux += jsonMarkers.getJSONObject(i).getString("marcador")+",";
+        }
+
+        for (int i = 0; i < jsonSamples.length(); i++) {
+            JSONArray jsonGenotype = jsonSamples.getJSONObject(i).getJSONArray("genotipo");
+
+            sampleAux +="[";
+            for (int j = 0; j < jsonGenotype.length(); j++) {
+                sampleAux += jsonGenotype.getJSONObject(j).getString("x")+","+jsonGenotype.getJSONObject(j).getString("y");
+            }
+            sampleAux += "],";
+        }
+        System.out.println("markAux: "+markAux);
+        System.out.println("sampleAux: "+sampleAux);
+
+        this.markers = markAux.substring(0, markAux.length()-1);
+
+        this.samples = sampleAux.substring(0, sampleAux.length()-1);
+
+        this.fatherName = jsonSamples.getJSONObject(0).getString("nombre");
+
+        this.childName = jsonSamples.getJSONObject(1).getString("nombre");;
+
+    
+    } catch (Exception e) {
+        throw new IllegalArgumentException("JSON is not valid");
     }
-    this.genotypic = genotypic;
-
-
 
   }
  
@@ -112,27 +132,29 @@ public class PermitteeRepresentations {
 
     return String.join("|", new String[]{
       network.namespacePrefix + namespaceSuffix,
-      patientName,
-      patientPassport,
+      fatherName,
+      childName,
       procedure.internationalName,
       result.internationalName,
       serial,
       isoInstantWithMilliseconds.format(time),
       permitteeId + "",
-      genotypic
+      markers,
+      samples
     });
   }
 
   public String getTightSerialization() {
     return String.join("|", new String[]{
-      patientName,
-      patientPassport,
+      fatherName,
+      childName,
       procedure.code,
       result.code,
       serial,
       time.toEpochMilli() + "",
       permitteeId + "",
-      genotypic
+      markers,
+      samples
     });  
   }  
 
