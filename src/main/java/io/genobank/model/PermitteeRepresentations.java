@@ -103,7 +103,7 @@ public class PermitteeRepresentations {
 
             sampleAux +="[";
             for (int j = 0; j < jsonGenotype.length(); j++) {
-                sampleAux += jsonGenotype.getJSONObject(j).getString("x")+","+jsonGenotype.getJSONObject(j).getString("y");
+                sampleAux += jsonGenotype.getJSONObject(j).getString("x")+","+jsonGenotype.getJSONObject(j).getString("y")+",";
             }
             sampleAux += "],";
         }
@@ -113,10 +113,16 @@ public class PermitteeRepresentations {
         this.markers = markAux.substring(0, markAux.length()-1);
 
         this.samples = sampleAux.substring(0, sampleAux.length()-1);
+        // remove '\n' in the string
+        // this.samples = this.samples.replaceAll("\n", "");
+        String auxfatherName = jsonSamples.getJSONObject(0).getString("nombre");
+        String auxchildName = jsonSamples.getJSONObject(1).getString("nombre");
 
-        this.fatherName = jsonSamples.getJSONObject(0).getString("nombre");
-
-        this.childName = jsonSamples.getJSONObject(1).getString("nombre");;
+        auxfatherName = auxfatherName.replaceAll("\n", "");
+        auxchildName = auxchildName.replaceAll("\n", "");
+        
+        this.fatherName = auxfatherName;
+        this.childName = auxchildName;
 
     
     } catch (Exception e) {
