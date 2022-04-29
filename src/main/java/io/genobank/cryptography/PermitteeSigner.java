@@ -29,6 +29,8 @@ public class PermitteeSigner {
   }
 
   public byte[] sign(PermitteeRepresentations representations) {
+    System.out.print("GET FULL SERIALIZATION\n"+representations.getFullSerialization());
+    System.out.print("\n\n\n");
     byte[] message = representations.getFullSerialization().getBytes(StandardCharsets.UTF_8);
     Sign.SignatureData signature = Sign.signPrefixedMessage(message, credentials.getEcKeyPair());
 
