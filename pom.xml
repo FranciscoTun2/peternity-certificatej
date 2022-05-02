@@ -6,6 +6,26 @@
     <version>1.1-SNAPSHOT</version>
 
     <name>paternity-certificates</name>
+    <description>Paternity certificates</description>
+    <url>https://genobank.io/</url>
+
+    <licenses>
+        <license>
+        <name>Apache License, Version 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/FranciscoTun2/peternity-certificatej.git</connection>
+        <developerConnection>scm:git:ssh://github.com:FranciscoTun2/peternity-certificatej.git</developerConnection>
+        <url>http://github.com/simpligility/ossrh-demo/tree/master</url>
+        <tag>v@{project.version}</tag>
+    </scm>
+
+
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
