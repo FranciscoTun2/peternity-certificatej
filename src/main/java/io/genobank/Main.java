@@ -11,12 +11,16 @@ import org.web3j.crypto.Keys;
  * @author William Entriken
  */
 public class Main {
+
   public static void main(String[] args) throws IllegalArgumentException {
 
-    if (args.length != 1) {
+
+    if (args.length != 3) {
       showHelp();
       return;
     }
+
+    // compare string
 
     System.err.println("Blockchain Lab Results Certification");
     System.err.println("Java Certification Example, version 1.1");
@@ -41,7 +45,7 @@ public class Main {
         throw new IllegalArgumentException("You must specify --test or --production network");
     }
 
-    PermitteeSigner signer = new PermitteeSigner(Settings.TWELVE_WORD_PHRASE, Integer.parseInt(Settings.PERMITTEE_ID));
+    PermitteeSigner signer = new PermitteeSigner(args[1], Integer.parseInt(args[0]));
     System.err.println("Address:     " + ConsoleColors.YELLOW + Keys.toChecksumAddress(signer.credentials.getAddress()) + ConsoleColors.RESET);
 
 
@@ -53,7 +57,7 @@ public class Main {
       Settings.SERIAL, // Serial
       Instant.ofEpochMilli(Long.parseLong(Settings.TIMESTAMP)), // Time
       signer.permitteeId, // Permittee ID
-      args[0] // JSON test
+      args[2] // JSON test
     );
 
     System.err.println("Father Name:     " + ConsoleColors.YELLOW + representations.fatherName + ConsoleColors.RESET);

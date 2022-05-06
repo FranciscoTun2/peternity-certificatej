@@ -1,15 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.franciscotun2</groupId>
+    <!-- <groupId>io.genobank</groupId> -->
+    <groupId>io.github.FranciscoTun2</groupId>
     <artifactId>peternity-certificatej</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
+    <version>1.1-SNAPSHOT</version>
+
     <name>paternity-certificates</name>
     <description>Paternity certificates</description>
     <url>https://genobank.io/</url>
 
+    <licenses>
+        <license>
+        <name>Apache License, Version 2.0</name>
+        <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <distributionManagement>
         <snapshotRepository>
@@ -22,25 +29,6 @@
         </repository>
     </distributionManagement>
 
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-        <license>
-            <name>MIT License</name>
-            <url>http://www.opensource.org/licenses/mit-license.php</url>
-        </license>
-    </licenses>
-
-    <scm>
-        <connection>scm:git:git://github.com/FranciscoTun2/peternity-certificatej.git</connection>
-        <developerConnection>scm:git:ssh://github.com:FranciscoTun2/peternity-certificatej.git</developerConnection>
-        <url>https://github.com/FranciscoTun2/peternity-certificatej</url>
-    </scm>
-
      <developers>
         <developer>
             <name>Francisco Tun</name>
@@ -50,22 +38,26 @@
         </developer>
     </developers>
 
-    <!-- <properties>-->
-         <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> --> 
-        <!-- <java.version>11</java.version> 
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties> -->
+    <scm>
+        <connection>scm:git:git://github.com/FranciscoTun2/peternity-certificatej.git</connection>
+        <developerConnection>scm:git:ssh://github.com:FranciscoTun2/peternity-certificatej.git</developerConnection>
+        <url>http://github.com/simpligility/ossrh-demo/tree/master</url>
+    </scm>
 
     <properties>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
+        <!-- <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version> -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
 
-    <!-- <dependencies>
+
+
+
+
+
+    <dependencies>
         <dependency>
             <groupId>org.web3j</groupId>
             <artifactId>crypto</artifactId>
@@ -81,47 +73,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </dependency>
-    </dependencies> -->
-
-	<dependencies>
-		<dependency>
-			<groupId>org.jsoup</groupId>
-			<artifactId>jsoup</artifactId>
-			<version>1.14.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.22</version>
-			<scope>provided</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>5.7.1</version>
-			<scope>test</scope>
-		</dependency>
-
-        <dependency>
-            <groupId>org.web3j</groupId>
-            <artifactId>crypto</artifactId>
-            <version>4.8.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20090211</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version>
-        </dependency>
-
-	</dependencies>
+    </dependencies>
 
 
     <build>
@@ -142,7 +94,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.8</version>
+                <version>1.6.7</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
