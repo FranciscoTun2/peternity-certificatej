@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.franciscotun2</groupId>
-    <artifactId>peternity-certificatej</artifactId>
-    <version>1.0.0</version>
+    <artifactId>peternitycertificatej</artifactId>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>paternity-certificates</name>
     <description>Paternity certificates</description>

@@ -2,7 +2,7 @@ package io.genobank;
 
 public class Settings {
     // public static final String NETWORK = "--test";
-    public static final String NETWORK = "--local";
+    public static final String NETWORK = "--test";
     // public static final String TWELVE_WORD_PHRASE = "wrong outside clever wagon father insane boy junk punch duck drift cupboard";
     // public static final String PERMITTEE_ID = "41";
     public static final String TEST = "6";
