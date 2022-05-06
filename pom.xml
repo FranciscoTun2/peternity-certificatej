@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.franciscotun2</groupId>
     <artifactId>peternityCertificatej</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>paternityCertificates</name>
     <description>Paternity certificates</description>
