@@ -3,13 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.franciscotun2</groupId>
-    <artifactId>peternitycertificatej</artifactId>
-    <version>1.0.1</version>
+    <artifactId>peternityCertificatej</artifactId>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
-    <name>paternity-certificates</name>
+    <name>paternityCertificates</name>
     <description>Paternity certificates</description>
     <url>https://genobank.io/</url>
-
 
     <distributionManagement>
         <snapshotRepository>
@@ -21,7 +20,6 @@
             <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
 
     <licenses>
         <license>
@@ -120,9 +118,7 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.8.1</version>
         </dependency>
-
 	</dependencies>
-
 
     <build>
         <plugins>
