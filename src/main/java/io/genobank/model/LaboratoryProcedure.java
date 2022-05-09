@@ -1,4 +1,4 @@
-package io.genobank;
+package io.genobank.model;
 
 /// @see https://genobank.io/certificates/laboratoryProcedureTaxonomy.json
 public class LaboratoryProcedure {

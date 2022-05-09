@@ -1,4 +1,4 @@
-package io.genobank;
+package io.genobank.network;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpResponse;
@@ -11,11 +11,16 @@ import java.util.regex.Pattern;
 
 import org.web3j.utils.Numeric;
 
+import io.genobank.cryptography.PermitteeSigner;
+import io.genobank.model.Network;
+import io.genobank.model.NotarizedCertificate;
+import io.genobank.model.PermitteeRepresentations;
+
 public class Platform {
   private Network network;
   private PermitteeSigner signer;
 
-  Platform(Network network, PermitteeSigner signer) {
+  public Platform(Network network, PermitteeSigner signer) {
     java.util.Objects.requireNonNull(network);
     this.network = network;
     this.signer = signer;

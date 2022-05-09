@@ -1,4 +1,4 @@
-package io.genobank;
+package io.genobank.model;
 
 import java.net.URI;
 import java.time.Instant;
@@ -28,7 +28,7 @@ public class NotarizedCertificate {
 
   public final byte[] txHash;
 
-  NotarizedCertificate(
+  public NotarizedCertificate(
     PermitteeRepresentations permitteeRepresentations,
     byte[] permiteeSignature,
     java.time.Instant notarizedTime,

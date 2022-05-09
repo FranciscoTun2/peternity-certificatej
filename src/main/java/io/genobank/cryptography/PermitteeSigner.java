@@ -1,4 +1,4 @@
-package io.genobank;
+package io.genobank.cryptography;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
@@ -8,6 +8,9 @@ import org.web3j.crypto.Credentials;
 import org.web3j.crypto.MnemonicUtils;
 import org.web3j.crypto.Sign;
 import org.web3j.utils.Numeric;
+
+import io.genobank.model.PermitteeRepresentations;
+
 import static org.web3j.crypto.Bip32ECKeyPair.HARDENED_BIT;
 
 public class PermitteeSigner {

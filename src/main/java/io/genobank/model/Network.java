@@ -1,4 +1,4 @@
-package io.genobank;
+package io.genobank.model;
 
 import java.net.URI;
 

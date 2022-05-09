@@ -1,4 +1,4 @@
-package io.genobank;
+package io.genobank.model;
 
 public class LaboratoryProcedureResult {
   /** A succinct code used in the tight serialization */
