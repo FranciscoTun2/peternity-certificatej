@@ -4,11 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.franciscotun2</groupId>
     <artifactId>paternCertificate</artifactId>
-<<<<<<< HEAD
-    <version>1.0.2</version>
-=======
     <version>1.0.5</version>
->>>>>>> 55df9749e7b1d6975f16ea8e192ff33b0d9a5530
     <packaging>jar</packaging>
     <name>paternityCertificate</name>
     <description>Paternity Certificate Genobank</description>
