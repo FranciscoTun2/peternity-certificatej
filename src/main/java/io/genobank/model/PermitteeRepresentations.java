@@ -49,6 +49,10 @@ public class PermitteeRepresentations {
 
   public final String aditionalData;
 
+  public final String interpretation;
+
+  public final String studyName;
+
   public PermitteeRepresentations(
     Network network,
     LaboratoryProcedure procedure,
@@ -95,6 +99,10 @@ public class PermitteeRepresentations {
         JSONObject jsonObject = new JSONObject(jsonTest);
         JSONArray jsonMarkers = jsonObject.getJSONArray("marcadores");
         JSONArray jsonSamples = jsonObject.getJSONArray("muestras");
+        this.studyName = jsonObject.getString("nombre_estudio");
+        this.interpretation = jsonObject.getString("interpretacion");
+        System.out.println("studyName: " + this.studyName);
+        System.out.println("interpretation: " + this.interpretation);
         // String [] tipos = new String[jsonSamples.length()];
         String tipos = "";
 
@@ -158,7 +166,9 @@ public class PermitteeRepresentations {
       permitteeId + "",
       markers,
       samples,
-      aditionalData
+      aditionalData,
+      interpretation,
+      studyName
     });
   }
 
@@ -173,7 +183,9 @@ public class PermitteeRepresentations {
       permitteeId + "",
       markers,
       samples,
-      aditionalData
+      aditionalData,
+      interpretation,
+      studyName
     });  
   }  
 
