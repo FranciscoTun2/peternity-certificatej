@@ -47,6 +47,8 @@ public class PermitteeRepresentations {
 
   public final String samples;
 
+  public final String aditionalData;
+
   public PermitteeRepresentations(
     Network network,
     LaboratoryProcedure procedure,
@@ -93,6 +95,9 @@ public class PermitteeRepresentations {
         JSONObject jsonObject = new JSONObject(jsonTest);
         JSONArray jsonMarkers = jsonObject.getJSONArray("marcadores");
         JSONArray jsonSamples = jsonObject.getJSONArray("muestras");
+        // String [] tipos = new String[jsonSamples.length()];
+        String tipos = "";
+
 
         for (int i = 0; i < jsonMarkers.length(); i++) {
             markAux += jsonMarkers.getJSONObject(i).getString("marcador")+",";
@@ -100,6 +105,8 @@ public class PermitteeRepresentations {
 
         for (int i = 0; i < jsonSamples.length(); i++) {
             JSONArray jsonGenotype = jsonSamples.getJSONObject(i).getJSONArray("genotipo");
+
+            tipos += jsonSamples.getJSONObject(i).getString("tipo")+",";
 
             sampleAux +="[";
             for (int j = 0; j < jsonGenotype.length(); j++) {
@@ -123,6 +130,10 @@ public class PermitteeRepresentations {
         
         this.fatherName = auxfatherName;
         this.childName = auxchildName;
+        
+        this.aditionalData = tipos.substring(0, tipos.length()-1);
+
+        System.out.println("aditionalData: "+this.aditionalData);
 
     
     } catch (Exception e) {
@@ -146,7 +157,8 @@ public class PermitteeRepresentations {
       isoInstantWithMilliseconds.format(time),
       permitteeId + "",
       markers,
-      samples
+      samples,
+      aditionalData
     });
   }
 
@@ -160,7 +172,8 @@ public class PermitteeRepresentations {
       time.toEpochMilli() + "",
       permitteeId + "",
       markers,
-      samples
+      samples,
+      aditionalData
     });  
   }  
 

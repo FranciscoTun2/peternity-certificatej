@@ -61,7 +61,7 @@ public class Certificate {
 		      signer.permitteeId, // Permittee ID
 		      args[2] // JSON test
 		    );
-//
+
 		    System.err.println("Father Name:     " + representations.fatherName);
 		    System.err.println("Child Name:    " + representations.childName);
 		    System.err.println("Procedure:   " + representations.procedure.code);

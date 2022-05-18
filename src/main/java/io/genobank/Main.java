@@ -27,7 +27,7 @@ public class Main {
 		  Certificate certificado = new Certificate();
 	      String idPermitee = "41";
 	      String twelve_words = "wrong outside clever wagon father insane boy junk punch duck drift cupboard";
-	      String jsonString = readMyFile("jsonTest1.txt");
+	      String jsonString = readMyFile("jsontesthey.txt");
 
 
 	    //   create a function to open a txt an set to a string variable
