@@ -53,6 +53,8 @@ public class PermitteeRepresentations {
 
   public final String studyName;
 
+  public final String CPI;
+
   public PermitteeRepresentations(
     Network network,
     LaboratoryProcedure procedure,
@@ -101,6 +103,7 @@ public class PermitteeRepresentations {
         JSONArray jsonSamples = jsonObject.getJSONArray("muestras");
         this.studyName = jsonObject.getString("nombre_estudio");
         this.interpretation = jsonObject.getString("interpretacion");
+        this.CPI = jsonObject.getString("indice_paternidad_combinado");
         System.out.println("studyName: " + this.studyName);
         System.out.println("interpretation: " + this.interpretation);
         // String [] tipos = new String[jsonSamples.length()];
@@ -168,7 +171,8 @@ public class PermitteeRepresentations {
       samples,
       aditionalData,
       interpretation,
-      studyName
+      studyName,
+      CPI,
     });
   }
 
@@ -185,7 +189,8 @@ public class PermitteeRepresentations {
       samples,
       aditionalData,
       interpretation,
-      studyName
+      studyName,
+      CPI
     });  
   }  
 
