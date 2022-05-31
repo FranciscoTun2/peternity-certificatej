@@ -104,8 +104,8 @@ public class PermitteeRepresentations {
         this.studyName = jsonObject.getString("nombre_estudio");
         this.interpretation = jsonObject.getString("interpretacion");
         this.CPI = jsonObject.getString("indice_paternidad_combinado");
-        System.out.println("studyName: " + this.studyName);
-        System.out.println("interpretation: " + this.interpretation);
+        // System.out.println("studyName: " + this.studyName);
+        // System.out.println("interpretation: " + this.interpretation);
         // String [] tipos = new String[jsonSamples.length()];
         String tipos = "";
 
@@ -125,8 +125,8 @@ public class PermitteeRepresentations {
             }
             sampleAux += "],";
         }
-        System.out.println("markAux: "+markAux);
-        System.out.println("sampleAux: "+sampleAux);
+        // System.out.println("markAux: "+markAux);
+        // System.out.println("sampleAux: "+sampleAux);
 
         this.markers = markAux.substring(0, markAux.length()-1);
 
@@ -144,10 +144,11 @@ public class PermitteeRepresentations {
         
         this.aditionalData = tipos.substring(0, tipos.length()-1);
 
-        System.out.println("aditionalData: "+this.aditionalData);
+        // System.out.println("aditionalData: "+this.aditionalData);
 
     
     } catch (Exception e) {
+        System.out.println("Error: "+e);
         throw new IllegalArgumentException("JSON is not valid");
     }
 

@@ -1,0 +1,191 @@
+{
+   "marcadores":[
+      {
+         "lp":"1",
+         "marcador":"Amelogenin "
+      },
+      {
+         "lp":"2",
+         "marcador":"TH01"
+      },
+      {
+         "lp":"3",
+         "marcador":"D3S1358 "
+      },
+      {
+         "lp":"4",
+         "marcador":"vWA "
+      },
+      {
+         "lp":"5",
+         "marcador":"D21S11 "
+      },
+      {
+         "lp":"6",
+         "marcador":"TPOX "
+      },
+      {
+         "lp":"7",
+         "marcador":"D7S820"
+      },
+      {
+         "lp":"8",
+         "marcador":"D19S433 "
+      },
+      {
+         "lp":"9",
+         "marcador":"D5S818 "
+      },
+      {
+         "lp":"10",
+         "marcador":"D2S1338"
+      },
+      {
+         "lp":"11",
+         "marcador":"D16S539 "
+      },
+      {
+         "lp":"12",
+         "marcador":"CSF1PO "
+      },
+      {
+         "lp":"13",
+         "marcador":"D13S317 "
+      },
+      {
+         "lp":"14",
+         "marcador":"FGA"
+      },
+      {
+         "lp":"15",
+         "marcador":"D18S51 "
+      },
+      {
+         "lp":"16",
+         "marcador":"D8S1179 "
+      },
+      {
+         "lp":"17",
+         "marcador":"D1S1656 "
+      },
+      {
+         "lp":"18",
+         "marcador":"SE33 "
+      },
+      {
+         "lp":"19",
+         "marcador":"D10S1248 "
+      },
+      {
+         "lp":"20",
+         "marcador":"D22S1045 "
+      },
+      {
+         "lp":"21",
+         "marcador":"D12S391 "
+      },
+      {
+         "lp":"22",
+         "marcador":"D2S441"
+      }
+   ],
+   "indice_paternidad_combinado":"123456",
+   "interpretacion":"CONCLUYENTE",
+   "nombre_estudio":"Estudio de Paternidad: Análisis de ADN con 25 STRs autosómicos (muestra adicional)",
+   "muestras":[
+      {
+         "tipo":"HIJO",
+         "nombre":"LUIS",
+         "genotipo":[
+            {
+               "x":"1",
+               "y":"22"
+            },
+            {
+               "x":"2",
+               "y":"21"
+            },
+            {
+               "x":"3",
+               "y":"20"
+            },
+            {
+               "x":"4",
+               "y":"19"
+            },
+            {
+               "x":"5",
+               "y":"18"
+            },
+            {
+               "x":"6",
+               "y":"17"
+            },
+            {
+               "x":"7",
+               "y":"16"
+            },
+            {
+               "x":"8",
+               "y":"15"
+            },
+            {
+               "x":"9",
+               "y":"14"
+            },
+            {
+               "x":"10",
+               "y":"13"
+            },
+            {
+               "x":"11",
+               "y":"12"
+            },
+            {
+               "x":"12",
+               "y":"11"
+            },
+            {
+               "x":"13",
+               "y":"10"
+            },
+            {
+               "x":"14",
+               "y":"9"
+            },
+            {
+               "x":"15",
+               "y":"8"
+            },
+            {
+               "x":"16",
+               "y":"7"
+            },
+            {
+               "x":"17",
+               "y":"6"
+            },
+            {
+               "x":"18",
+               "y":"5"
+            },
+            {
+               "x":"19",
+               "y":"4"
+            },
+            {
+               "x":"20",
+               "y":"3"
+            },
+            {
+               "x":"21",
+               "y":"2"
+            },
+            {
+               "x":"22",
+               "y":"1"
+            }
+         ]
+      }
+   ]
+}
