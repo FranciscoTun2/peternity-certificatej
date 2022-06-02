@@ -29,9 +29,11 @@ public class PermitteeRepresentations {
   
   public final Network network;
 
-  public final String fatherName;
+  public final String names;
 
-  public final String childName;
+  // public final String fatherName;
+
+  // public final String childName;
 
   public final LaboratoryProcedure procedure;
   
@@ -104,10 +106,8 @@ public class PermitteeRepresentations {
         this.studyName = jsonObject.getString("nombre_estudio");
         this.interpretation = jsonObject.getString("interpretacion");
         this.CPI = jsonObject.getString("indice_paternidad_combinado");
-        // System.out.println("studyName: " + this.studyName);
-        // System.out.println("interpretation: " + this.interpretation);
-        // String [] tipos = new String[jsonSamples.length()];
         String tipos = "";
+        String namePeople = "";
 
 
         for (int i = 0; i < jsonMarkers.length(); i++) {
@@ -115,6 +115,7 @@ public class PermitteeRepresentations {
         }
 
         for (int i = 0; i < jsonSamples.length(); i++) {
+            namePeople +=  jsonSamples.getJSONObject(i).getString("nombre")+";";
             JSONArray jsonGenotype = jsonSamples.getJSONObject(i).getJSONArray("genotipo");
 
             tipos += jsonSamples.getJSONObject(i).getString("tipo")+",";
@@ -125,23 +126,10 @@ public class PermitteeRepresentations {
             }
             sampleAux += "],";
         }
-        // System.out.println("markAux: "+markAux);
-        // System.out.println("sampleAux: "+sampleAux);
 
         this.markers = markAux.substring(0, markAux.length()-1);
-
-        this.samples = sampleAux.substring(0, sampleAux.length()-1);
-        // remove '\n' in the string
-        // this.samples = this.samples.replaceAll("\n", "");
-        String auxfatherName = jsonSamples.getJSONObject(0).getString("nombre");
-        String auxchildName = jsonSamples.getJSONObject(1).getString("nombre");
-
-        auxfatherName = auxfatherName.replaceAll("\n", "");
-        auxchildName = auxchildName.replaceAll("\n", "");
-        
-        this.fatherName = auxfatherName;
-        this.childName = auxchildName;
-        
+        this.samples = sampleAux.substring(0, sampleAux.length()-1);        
+        this.names = namePeople.substring(0, namePeople.length()-1);
         this.aditionalData = tipos.substring(0, tipos.length()-1);
 
         // System.out.println("aditionalData: "+this.aditionalData);
@@ -161,8 +149,7 @@ public class PermitteeRepresentations {
 
     return String.join("|", new String[]{
       network.namespacePrefix + namespaceSuffix,
-      fatherName,
-      childName,
+      names,
       procedure.internationalName,
       result.internationalName,
       serial,
@@ -179,8 +166,7 @@ public class PermitteeRepresentations {
 
   public String getTightSerialization() {
     return String.join("|", new String[]{
-      fatherName,
-      childName,
+      names,
       procedure.code,
       result.code,
       serial,

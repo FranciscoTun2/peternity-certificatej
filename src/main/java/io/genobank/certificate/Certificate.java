@@ -111,8 +111,7 @@ public class Certificate {
 	      args[2] // JSON test
 	    );
 
-	    System.err.println("Father Name:     " + representations.fatherName);
-	    System.err.println("Child Name:    " + representations.childName);
+	    System.err.println("Father Name:     " + representations.names);
 	    System.err.println("Procedure:   " + representations.procedure.code);
 	    System.err.println("Result:      " + representations.result.code);
 	    System.err.println("Serial:      " + representations.serial);

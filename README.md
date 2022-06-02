@@ -58,7 +58,7 @@ After you have made any changes, run the build command above.
 Run the product without arguments to see instructions
 
 ```sh
-java -jar target/*.jar --test
+java -jar target/*.jar
 ```
 
 Or include all required parameters to notarize a certificate
