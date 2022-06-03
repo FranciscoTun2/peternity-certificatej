@@ -28,7 +28,7 @@ public class Main {
 	      String idPermitee = "41";
 	      String twelve_words = "wrong outside clever wagon father insane boy junk punch duck drift cupboard";
 	    //   String jsonString = readMyFile("jsontesthey.txt");
-	      String jsonString = readMyFile("1muestra.txt");
+	      String jsonString = readMyFile("2muestras.txt");
 
 	      String [] myArguments = {idPermitee, twelve_words, jsonString};
 	      Certificate certificado = new Certificate(myArguments);
