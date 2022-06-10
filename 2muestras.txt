@@ -26,7 +26,7 @@
 	{"lp":"24","marcador":"D2S1338"},
 	{"lp":"25","marcador":"Penta D"}
 ],
-"indice_paternidad_combinado":"0",
+"indice_paternidad_combinado":"20",
 "nombre_estudio" : "PRUEBA DE PATERNIDAD",
 "interpretacion" : "",
 "muestras":[
