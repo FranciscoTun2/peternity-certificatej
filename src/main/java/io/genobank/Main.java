@@ -33,6 +33,7 @@ public class Main {
 	      String [] myArguments = {idPermitee, twelve_words, jsonString};
 	      Certificate certificado = new Certificate(myArguments);
 	      System.out.print("This is my certificate URI: "+certificado.getUri());
+		  System.out.println();
 	      
   }
   
