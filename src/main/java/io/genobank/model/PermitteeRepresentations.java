@@ -57,6 +57,12 @@ public class PermitteeRepresentations {
 
   public final String CPI;
 
+  public final String metodology;
+
+  public final String folio;
+
+  public final String tipo_muestra;
+
   public PermitteeRepresentations(
     Network network,
     LaboratoryProcedure procedure,
@@ -103,6 +109,9 @@ public class PermitteeRepresentations {
         JSONObject jsonObject = new JSONObject(jsonTest);
         JSONArray jsonMarkers = jsonObject.getJSONArray("marcadores");
         JSONArray jsonSamples = jsonObject.getJSONArray("muestras");
+        this.metodology = jsonObject.getString("metodologia");
+        this.folio = jsonObject.getString("folio");
+        this.tipo_muestra = jsonObject.getString("tipo_muestra");
         this.studyName = jsonObject.getString("nombre_estudio");
         this.interpretation = jsonObject.getString("interpretacion");
         this.CPI = jsonObject.getString("indice_paternidad_combinado");
@@ -161,6 +170,9 @@ public class PermitteeRepresentations {
       interpretation,
       studyName,
       CPI,
+      metodology,
+      folio,
+      tipo_muestra
     });
   }
 
@@ -177,7 +189,10 @@ public class PermitteeRepresentations {
       aditionalData,
       interpretation,
       studyName,
-      CPI
+      CPI,
+      metodology,
+      folio,
+      tipo_muestra
     });  
   }  
 
