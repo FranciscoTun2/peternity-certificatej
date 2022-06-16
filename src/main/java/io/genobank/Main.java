@@ -27,11 +27,14 @@ public class Main {
 		  String network = "--production";
 	      String idPermitee = "8";
 	      String twelve_words = "wrong outside clever wagon father insane boy junk punch duck drift cupboard";
-	    //   String jsonString = readMyFile("jsontesthey.txt");
 	      String jsonString = readMyFile("json 3 muestras.txt");
-
 	      String [] myArguments = {network, idPermitee, twelve_words, jsonString};
 	      Certificate certificado = new Certificate(myArguments);
+
+
+
+
+          
 	      System.out.print("This is my certificate URI: "+certificado.getUri());
 		  System.out.println();
 	      
