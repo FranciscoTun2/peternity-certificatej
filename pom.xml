@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.franciscotun2</groupId>
     <artifactId>paternCertificate</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <packaging>jar</packaging>
     <name>paternityCertificate</name>
     <description>Paternity Certificate Genobank</description>
@@ -33,7 +33,7 @@
         </license>
     </licenses>
 
-    <scm>
+    <scm>mvn versions:set -DnewVersion=1.2
         <connection>scm:git:git://github.com/FranciscoTun2/peternity-certificatej.git</connection>
         <developerConnection>scm:git:ssh://github.com:FranciscoTun2/peternity-certificatej.git</developerConnection>
         <url>https://github.com/FranciscoTun2/peternity-certificatej</url>
