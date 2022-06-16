@@ -33,7 +33,7 @@
         </license>
     </licenses>
 
-    <scm>mvn versions:set -DnewVersion=1.2
+    <scm>
         <connection>scm:git:git://github.com/FranciscoTun2/peternity-certificatej.git</connection>
         <developerConnection>scm:git:ssh://github.com:FranciscoTun2/peternity-certificatej.git</developerConnection>
         <url>https://github.com/FranciscoTun2/peternity-certificatej</url>
