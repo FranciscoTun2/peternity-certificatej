@@ -18,14 +18,14 @@ public class Certificate {
 		Settings settings = new Settings();
 
         // if args.length is different from 3 then throw an exception and no continue
-        if (args.length != 3) {
+        if (args.length != 4) {
             showHelp();
             throw new IllegalArgumentException("Invalid number of arguments");
         }
 
 	    Network network;
 	    
-	    switch (settings.NETWORK) {
+	    switch (args[0]) {
 	      case "--test":
 	        network = Network.TEST;
 	        break;
@@ -38,7 +38,7 @@ public class Certificate {
 	      default:
 	        throw new IllegalArgumentException("You must specify --test or --production network");
 	    }
-	    PermitteeSigner signer = new PermitteeSigner(args[1], Integer.parseInt(args[0]));
+	    PermitteeSigner signer = new PermitteeSigner(args[2], Integer.parseInt(args[1]));
 	    
 
 	    PermitteeRepresentations representations = new PermitteeRepresentations(
@@ -48,7 +48,7 @@ public class Certificate {
 	      Settings.SERIAL, // Serial
 	      Instant.ofEpochMilli(Long.parseLong(Settings.TIMESTAMP)), // Time
 	      signer.permitteeId, // Permittee ID
-	      args[2] // JSON test
+	      args[3] // JSON test
 	    );
 
 	    byte[] signature = signer.sign(representations);
