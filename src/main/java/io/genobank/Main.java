@@ -20,7 +20,7 @@ import io.genobank.certificate.Certificate;
  * @author William Entriken
  */
      
-public class Main {
+public class Main {  
 
 	  public static void main(String[] args) throws IllegalArgumentException, JSONException {
 		  
