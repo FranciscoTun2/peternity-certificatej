@@ -78,6 +78,7 @@ public class Platform {
       Matcher certificateTimestampMatcher = certificateTimestampPattern.matcher(responseString);
       if (certificateTimestampMatcher.find()) {
         certificateTimestamp = certificateTimestampMatcher.group(1);
+        System.out.println("Server certificate timestamp: " + certificateTimestamp);
       } else {
         throw new RuntimeException("Server error c");
       }

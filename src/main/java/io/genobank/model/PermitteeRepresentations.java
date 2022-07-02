@@ -91,6 +91,8 @@ public class PermitteeRepresentations {
     this.serial = serial;
     
     // Time
+    System.out.println(Instant.parse("2021-01-01T00:00:00Z"));
+    System.out.println(time.compareTo(Instant.parse("2021-01-01T00:00:00Z")));
     if (time.compareTo(Instant.parse("2021-01-01T00:00:00Z")) < 0) {
       throw new IllegalArgumentException("Time is too early, it is before 2021-01-01");
     }

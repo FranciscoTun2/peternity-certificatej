@@ -31,7 +31,7 @@
 "interpretacion" : "",
 "muestras":[
 	{"tipo":"PADRE",
-	"nombre":"LUIS",
+	"nombre":"LUIS ALEJANDRO LOPEZ MARTÍNEZ",
 	"genotipo":[
 		{"x":"10","y":"34"},
 		{"x":"11","y":"33"},
@@ -60,7 +60,7 @@
 		{"x":"33","y":"10"}
 	]},
 	{"tipo":"HIJO",
-	"nombre":"ALEJANDRO",
+	"nombre":"ALEJANDRO DE JESÚS LÓPEZ CONTRERAS",
 	"genotipo":[
 		{"x":"10","y":"34"},
 		{"x":"11","y":"33"},
@@ -89,7 +89,7 @@
 		{"x":"33","y":"10"}
 	]},
 	{"tipo":"MADRE",
-	"nombre":"MARIA",
+	"nombre":"MARIA DE LOS ANGELES DEL SAGRADO CORAZÓN CONTRERAS CÓRDOBA",
 	"genotipo":[
 		{"x":"10","y":"34"},
 		{"x":"11","y":"33"},

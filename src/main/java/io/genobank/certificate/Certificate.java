@@ -18,7 +18,7 @@ public class Certificate {
 		Settings settings = new Settings();
 
         // if args.length is different from 3 then throw an exception and no continue
-        if (args.length != 4) {
+        if (args.length != 5) {
             showHelp();
             throw new IllegalArgumentException("Invalid number of arguments");
         }
@@ -46,9 +46,9 @@ public class Certificate {
 	      LaboratoryProcedure.procedureWithCode(Settings.TEST), // Laboratory procedure (ALWAYS PATERNITY TEST)
 	      LaboratoryProcedure.procedureWithCode(Settings.TEST).resultWithCode(Settings.RESULT), // Laboratory result
 	      Settings.SERIAL, // Serial
-	      Instant.ofEpochMilli(Long.parseLong(Settings.TIMESTAMP)), // Time
+	      Instant.ofEpochMilli(Long.parseLong(args[3])), // Time
 	      signer.permitteeId, // Permittee ID
-	      args[3] // JSON test
+	      args[4] // JSON test
 	    );
 
 	    byte[] signature = signer.sign(representations);

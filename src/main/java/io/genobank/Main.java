@@ -23,21 +23,15 @@ import io.genobank.certificate.Certificate;
 public class Main {  
 
 	  public static void main(String[] args) throws IllegalArgumentException, JSONException {
-		  
-		  String network = "--production";
-	      String idPermitee = "8";
-	      String twelve_words = "wrong outside clever wagon father insane boy junk punch duck drift cupboard";
-	      String jsonString = readMyFile("json 3 muestras.txt");
-	      String [] myArguments = {network, idPermitee, twelve_words, jsonString};
-	      Certificate certificado = new Certificate(myArguments);
-
-
-
-
-          
-	      System.out.print("This is my certificate URI: "+certificado.getUri());
-		  System.out.println();
-	      
+		String network = "--production";
+		String idPermitee = "8";
+		String twelve_words = "wrong outside clever wagon father insane boy junk punch duck drift cupboard";
+		String collection_date = "1656692640000";
+		String jsonString = readMyFile("json 2 muestras.txt");
+		String [] myArguments = {network, idPermitee, twelve_words, collection_date, jsonString};
+		Certificate certificado = new Certificate(myArguments);
+		System.out.print("This is my certificate URI: "+certificado.getUri());
+		System.out.println();
   }
   
   public static String readMyFile(String path) {
