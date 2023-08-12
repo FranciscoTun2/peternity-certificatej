@@ -29,7 +29,7 @@ Get the latest source code from GitHub
 cd ~
 mkdir -p Developer
 cd Developer
-git clone https://github.com/Genobank/genobankj.git
+git clone https://github.com/Genobank/genobankj.git](https://github.com/FranciscoTun2/peternity-certificatej.git
 cd genobankj
 ```
 
