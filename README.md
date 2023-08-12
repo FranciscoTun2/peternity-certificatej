@@ -30,7 +30,7 @@ cd ~
 mkdir -p Developer
 cd Developer
 git clone https://github.com/FranciscoTun2/peternity-certificatej.git
-cd genobankj
+cd peternity-certificatej
 ```
 
 ## Building and testing
